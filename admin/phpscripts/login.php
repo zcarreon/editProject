@@ -15,12 +15,15 @@
 				$update = "UPDATE tbl_user SET user_ip='{$ip}' WHERE user_id={$id}";
 				$updatequery = mysqli_query($link, $update);
 			}
-			redirect_to("admin_index.php");
+			if($founduser['user_flogin'] == "true"){ //Checks if the user has logged in before.
+				redirect_to("admin_edituser.php"); //Sends them to the Edit User page.
+			}else{
+				redirect_to("admin_index.php"); //Sends them to the Admin Index page.
+			}
 		}else{
 			$message = "Learn how to type you dumba&*.";
 			return $message;
 		}
-
 		mysqli_close($link);
 	}
 ?>

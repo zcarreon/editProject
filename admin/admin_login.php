@@ -19,6 +19,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome to your admin panel login</title>
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<?php if(!empty($message)){ echo $message;} ?>

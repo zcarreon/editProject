@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome to Death Row</title>
+<link href="css/main.css" rel="stylesheet">
 </head>
 <body>
 	<h1>Welcome to Death Row</h1>
