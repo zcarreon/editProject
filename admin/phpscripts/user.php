@@ -1,7 +1,7 @@
 <?php
   function createUser($fname, $username, $password, $email, $userLV){
     include("connect.php");
-    $userString = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$username}', '{$password}', '{$email}', DEFAULT, '{$userLV}', 'no')";
+    $userString = "INSERT INTO tbl_user VALUES(NULL, '{$fname}', '{$username}', '{$password}', '{$email}', DEFAULT, '{$userLV}', 'no', DEFAULT)";
     $userQuery = mysqli_query($link, $userString);
     if($userQuery){
       redirect_to("admin_index.php");
@@ -14,7 +14,7 @@
 
   function editUser($id, $fname, $username, $password, $email){
       include("connect.php");
-      $updateString = "UPDATE tbl_user SET user_fname = '{$fname}', user_name = '{$username}', user_pass = '{$password}', user_email = '{$email}' WHERE user_id = '{$id}'";
+      $updateString = "UPDATE tbl_user SET user_fname = '{$fname}', user_name = '{$username}', user_pass = '{$password}', user_email = '{$email}', user_flogin = 'false' WHERE user_id = '{$id}'";
       //echo $updateString;
       $updatequery = mysqli_query($link, $updateString);
       if($updatequery){
